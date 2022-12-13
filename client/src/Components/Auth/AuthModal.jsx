@@ -12,7 +12,6 @@ import AppBar from '@mui/material/AppBar';
 import CustomButton from '../Button/CustomButton';
 import Login from './Login';
 import Signup from './Signup';
-
 const style = {
   position: 'absolute',
   top: '50%',
