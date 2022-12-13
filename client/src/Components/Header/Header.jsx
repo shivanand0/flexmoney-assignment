@@ -6,12 +6,14 @@ import SelfImprovementIcon from '@mui/icons-material/SelfImprovement';
 import AuthModal from '../Auth/AuthModal';
 import ProfileIcon from '../Auth/ProfileIcon';
 import { AppState } from '../../Context/AppContext';
+import { Link } from 'react-router-dom';
 const Header = (props) => {
   const { title } = props;
   const { auth } = AppState()
   return (
+    <div style={{ position: 'sticky', top: 0, backgroundColor: 'rgba(255,255,255, 0.8)' }}>
     <Toolbar sx={{ borderBottom: 1, borderColor: 'divider' }}>
-      <SelfImprovementIcon fontSize="large" />
+      <Link to="/" style={{ textDecoration: "none", color: "#000" }}><SelfImprovementIcon fontSize="large" /></Link>
       <Typography
         component="h2"
         variant="h5"
@@ -28,6 +30,7 @@ const Header = (props) => {
       
 
     </Toolbar>
+    </div>
   );
 }
 

@@ -4,6 +4,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import AccountModal from '../Profile/MyAccount/AccountModal';
+import { Link } from "react-router-dom"
 const ProfileIcon = () => {
     const [anchorEl, setAnchorEl] = useState(null);
 
@@ -41,6 +42,7 @@ const ProfileIcon = () => {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
             >
+                <MenuItem onClick={handleClose}><Link to="/profile" style={{ textDecoration: "none", color: "#000" }}>Dashboard</Link></MenuItem>
                 <MenuItem onClick={handleClose}><AccountModal /></MenuItem>
                 <MenuItem onClick={handleClose}>Logout</MenuItem>
             </Menu>

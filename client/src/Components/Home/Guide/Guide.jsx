@@ -16,6 +16,7 @@ const Guide = () => {
         alignItems: "center",
         marginTop: "2rem",
       }}
+      id="section1"
     >
       <div
         style={{
