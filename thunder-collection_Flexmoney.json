@@ -1,0 +1,138 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Flexmoney",
+    "dateExported": "2022-12-14T15:39:26.825Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "18a7e543-ab79-420f-810d-3f4ef735ddc7",
+            "name": "User",
+            "containerId": "",
+            "created": "2022-12-14T11:07:08.624Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "c6eb352e-8d09-4c89-8b86-6cad7675b927",
+            "name": "Auth",
+            "containerId": "18a7e543-ab79-420f-810d-3f4ef735ddc7",
+            "created": "2022-12-14T11:07:14.170Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "b8ab115e-2659-4ef9-9a54-c440a059a57f",
+            "name": "Enrollment",
+            "containerId": "",
+            "created": "2022-12-14T12:51:02.849Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "9938bea7-c44c-43f9-b2c2-39fa035cabf7",
+            "colId": "1e918b5d-5318-4d57-8c5b-c15e5e7ac49b",
+            "containerId": "c6eb352e-8d09-4c89-8b86-6cad7675b927",
+            "name": "Sign Up",
+            "url": "localhost:5000/api/user/auth/signin",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2022-12-14T11:07:01.410Z",
+            "modified": "2022-12-14T11:10:18.747Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"email\":\"amanmitkar@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6242bf6f-b946-4079-8e7a-32cf00c571df",
+            "colId": "1e918b5d-5318-4d57-8c5b-c15e5e7ac49b",
+            "containerId": "c6eb352e-8d09-4c89-8b86-6cad7675b927",
+            "name": "Sign In",
+            "url": "localhost:5000/api/user/auth/signin",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2022-12-14T11:10:53.924Z",
+            "modified": "2022-12-14T13:08:05.587Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"email\":\"amanmitkar@gmail.com\",\n    \"password\":\"123456789\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "0052019b-9bb9-493b-828d-223015a09d6d",
+            "colId": "1e918b5d-5318-4d57-8c5b-c15e5e7ac49b",
+            "containerId": "c6eb352e-8d09-4c89-8b86-6cad7675b927",
+            "name": "Reset Password",
+            "url": "localhost:5000/api/user/auth/resetpassword",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2022-12-14T11:11:18.879Z",
+            "modified": "2022-12-14T11:14:01.319Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"id\":\"6399aee255141b4345571379\",\r\n    \"password\":\"123456789\"\r\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFtYW5taXRrYXJAZ21haWwuY29tIiwiaWQiOiI2Mzk5YWVlMjU1MTQxYjQzNDU1NzEzNzkiLCJpYXQiOjE2NzEwMTYyMTgsImV4cCI6MTY3MTAxOTgxOH0.8xkOR3depi0UnNPfU-KIZj46TM4HxsAeQoH5k1Q7qsM"
+            },
+            "tests": []
+        },
+        {
+            "_id": "0dbcf7cf-eeb8-42d9-913b-8989fce5f22a",
+            "colId": "1e918b5d-5318-4d57-8c5b-c15e5e7ac49b",
+            "containerId": "c6eb352e-8d09-4c89-8b86-6cad7675b927",
+            "name": "Update Profile",
+            "url": "localhost:5000/api/user/auth/updateProfile",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2022-12-14T11:16:58.917Z",
+            "modified": "2022-12-14T15:17:50.217Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"id\":\"6399aee255141b4345571379\",\n    \"name\":\"Aman Mitkar\",\n    \"phone\": \"9607108685\",\n    \"age\": 20\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFtYW5taXRrYXJAZ21haWwuY29tIiwiaWQiOiI2Mzk5YWVlMjU1MTQxYjQzNDU1NzEzNzkiLCJpYXQiOjE2NzEwMjk1MzIsImV4cCI6MTY3MTAzMzEzMn0.SwQyaHX2oGDE6hRwPSk0DKjJdldQMiW8MJmNWAQaphU"
+            },
+            "tests": []
+        },
+        {
+            "_id": "b906a1ce-c8f7-40e6-a0f4-99a1a5b869e5",
+            "colId": "1e918b5d-5318-4d57-8c5b-c15e5e7ac49b",
+            "containerId": "b8ab115e-2659-4ef9-9a54-c440a059a57f",
+            "name": "Add Enrollment",
+            "url": "localhost:5000/api/user/enroll/",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2022-12-14T12:51:15.244Z",
+            "modified": "2022-12-14T15:19:37.671Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": \"6399aee255141b4345571379\",\n  \"paymentStatus\": 0,\n  \"paymentID\": null,\n  \"paymentDate\": null,\n  \"enrollDate\": \"2022-12-14T14:50:36.800Z\",\n  \"batch\": \"7-8 AM\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFtYW5taXRrYXJAZ21haWwuY29tIiwiaWQiOiI2Mzk5YWVlMjU1MTQxYjQzNDU1NzEzNzkiLCJpYXQiOjE2NzEwMjk1MzIsImV4cCI6MTY3MTAzMzEzMn0.SwQyaHX2oGDE6hRwPSk0DKjJdldQMiW8MJmNWAQaphU"
+            },
+            "tests": []
+        }
+    ]
+}
