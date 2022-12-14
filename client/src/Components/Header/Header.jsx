@@ -1,20 +1,19 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Toolbar from '@mui/material/Toolbar';
-import Button from '@mui/material/Button';
-// import IconButton from '@mui/material/IconButton';
-// import SearchIcon from '@mui/icons-material/Search';
 import Typography from '@mui/material/Typography';
-// import Link from '@mui/material/Link';
 import SelfImprovementIcon from '@mui/icons-material/SelfImprovement';
-import CustomButton from '../Button/CustomButton';
 import AuthModal from '../Auth/AuthModal';
+import ProfileIcon from '../Auth/ProfileIcon';
+import { AppState } from '../../Context/AppContext';
+import { Link } from 'react-router-dom';
 const Header = (props) => {
   const { title } = props;
-
+  const { auth } = AppState()
   return (
+    <div style={{ position: 'sticky', top: 0, backgroundColor: 'rgba(255,255,255, 0.8)' }}>
     <Toolbar sx={{ borderBottom: 1, borderColor: 'divider' }}>
-      <SelfImprovementIcon fontSize="large" />
+      <Link to="/" style={{ textDecoration: "none", color: "#000" }}><SelfImprovementIcon fontSize="large" /></Link>
       <Typography
         component="h2"
         variant="h5"
@@ -25,17 +24,13 @@ const Header = (props) => {
       >
         {title}
       </Typography>
-      {/* <CustomButton
-        backgroundColor="#0F1B4C"
-        color="#fff"
-        buttonText="Login"
-        // getStartedBtn={true}
-      /> */}
-      <AuthModal />
-      {/* <Button variant="outlined" size="small">
-        Sign up
-      </Button> */}
+
+      {auth ? <ProfileIcon /> : <AuthModal />}
+      
+      
+
     </Toolbar>
+    </div>
   );
 }
 

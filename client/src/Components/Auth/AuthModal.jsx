@@ -12,7 +12,6 @@ import AppBar from '@mui/material/AppBar';
 import CustomButton from '../Button/CustomButton';
 import Login from './Login';
 import Signup from './Signup';
-
 const style = {
   position: 'absolute',
   top: '50%',
@@ -44,9 +43,7 @@ const AuthModal = () => {
         color="#fff"
         buttonText="Login"
         onClick={handleOpenAuthModal}
-      // getStartedBtn={true}
       />
-      {/* <Button onClick={handleOpenAuthModal}>Open modal</Button> */}
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"

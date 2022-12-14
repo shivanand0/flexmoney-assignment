@@ -4,7 +4,7 @@ import { Container } from '@mui/system'
 import { CustomBox, Title } from './Styles/Styles'
 import CustomButton from '../../Button/CustomButton'
 import img1 from '../../../assets/img/pose2.png'
-
+import { Link } from 'react-router-dom'
 const Hero = () => {
     return (
         <Box sx={{ backgroundColor: "#E6F0FF", minHeight: "80vh" }}>
@@ -32,12 +32,14 @@ const Hero = () => {
                         >
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt, accusantium illo doloribus exercitationem et voluptatibus eos corporis odio in id! Placeat earum natus a aliquam ullam quaerat dolore molestiae assumenda!
                         </Typography>
+                        <Link to="#section1">
                         <CustomButton
                             backgroundColor="#0F1B4C"
                             color="#fff"
                             buttonText="More About Us"
                             heroBtn={true}
                         />
+                        </Link>
                     </Box>
 
                     <Box sx={{ flex: "0.3" }}>
