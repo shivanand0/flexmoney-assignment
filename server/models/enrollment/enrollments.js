@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 let enrollmentSchema = new Schema(
     {
         author: { type: Schema.Types.ObjectId, ref: "Users" },
+        payNow: { type: Boolean },
         paymentStatus: { type: Boolean, default: 0 },
         paymentID: { type: String },
         paymentDate: { type: Date },
