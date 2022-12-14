@@ -109,6 +109,27 @@ const moduleExport = {
             return res.status(500).json({ message: "Something went wrong...", error: error });
         }
     },
+
+    /* *
+     * @api {post} /api/user/auth/getProfile
+     * @apiDescription api to Get Profile
+     * */
+    async getprofile(req, res) {
+        try {
+            // return res.send('UPDATE PROFILE')
+
+            const { id } = req.body
+            let user = await Users.findById(id)
+
+            if (!user)
+                return res.status(404).json({ message: "User doesn\`t exists" });
+
+            return res.status(200).json({ message: "Get Profile", res: user });
+        } catch (error) {
+            // console.log(error)
+            return res.status(500).json({ message: "Something went wrong...", error: error });
+        }
+    },
 }
 
 export default moduleExport

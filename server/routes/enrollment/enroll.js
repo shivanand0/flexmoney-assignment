@@ -17,4 +17,10 @@ router.post('/enroll', authMiddleWare, enrollController.enrollForm)
 * */
 router.post('/enroll/payLater', authMiddleWare, enrollController.payLater)
 
+/* *
+* @api {post} /api/user/enroll/getAll
+* @apiDescription api to get all enrollments of user
+* */
+router.post('/enroll/getAll', authMiddleWare, enrollController.getAllEnrollments)
+
 export default router

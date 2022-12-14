@@ -27,7 +27,7 @@ const moduleExport = {
 
             if (checkEnrollment) return res.status(400).json({ message: `Already Enrolled for month ${monthName}` });
 
-            let paymentID=null, paymentStatus=0, paymentDate=null;
+            let paymentID = null, paymentStatus = 0, paymentDate = null;
             if (payNow) {
                 /* if wants to pay now, do payment then proceed based on payment status
                     get payment ID, if failed return with error
@@ -78,13 +78,31 @@ const moduleExport = {
                 paymentID = "123SBSB"
                 // return res.status(200).json({ message: "Paid Successfully" });
             }
-            checkEnroll.paymentStatus=paymentStatus
-            checkEnroll.paymentID=paymentID
-            checkEnroll.paymentDate=paymentDate
+            checkEnroll.paymentStatus = paymentStatus
+            checkEnroll.paymentID = paymentID
+            checkEnroll.paymentDate = paymentDate
 
             checkEnroll = await checkEnroll.save()
 
             return res.status(200).json({ message: "Paid Successfully", res: checkEnroll });
+        } catch (err) {
+            res.status(500).json({ message: "Something went wrong", Error: err });
+        }
+    },
+    /* *
+    * @api {post} /api/user/enroll/getAll
+    * @apiDescription api to get all enrollments of user
+    * */
+    async getAllEnrollments(req, res) {
+
+        try {
+            const { userID } = req.body
+
+            let enrollments = await Enroll.find({ author: userID })
+            let user = await Users.findById(userID)
+            if (!user) return res.status(404).json({ message: "User doesn\`t exists" });
+
+            return res.status(200).json({ message: "success", res: enrollments });
         } catch (err) {
             res.status(500).json({ message: "Something went wrong", Error: err });
         }
